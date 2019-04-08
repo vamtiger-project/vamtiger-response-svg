@@ -1,0 +1,1 @@
+{"version":3,"sources":["source/css/document-index.css"],"names":[],"mappings":"AAAA,uDAEI,WAAY,AACZ,WAAa,CAChB","file":"source/css/document-index.css","sourcesContent":["vamtiger-responsive-svg [slot=\"vamtiger-responsive-svg\"]\n{\n    width: 100%;\n    height: 100%;\n}"]}
