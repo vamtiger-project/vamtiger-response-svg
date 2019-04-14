@@ -2,9 +2,12 @@ import getElement from '../node_modules/vamtiger-browser-method/source/get-eleme
 import {
     ILoadSvg,
     Selector,
-    IDataset
+    IDataset,
+    StringConstant
 } from './types';
 import { name } from './element';
+
+const { nothing } = StringConstant;
 
 export default async function ({ element }: ILoadSvg) {
     const dataset = element.dataset as IDataset;
@@ -19,6 +22,8 @@ export default async function ({ element }: ILoadSvg) {
         svg.slot = name;
 
         element.appendChild(svg);
+
+        element.dataset.loaded = nothing;
     }
 
 }
