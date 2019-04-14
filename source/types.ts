@@ -10,6 +10,10 @@ export enum Selector {
     slot = 'slot'
 }
 
+export enum EventName {
+    svgLoaded = 'svgLoaded'
+}
+
 export enum ObservedAttributes {
 
 }

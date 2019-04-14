@@ -3,11 +3,15 @@ import {
     ILoadSvg,
     Selector,
     IDataset,
-    StringConstant
+    StringConstant,
+    EventName
 } from './types';
 import { name } from './element';
 
 const { nothing } = StringConstant;
+const eventParams = {
+    bubbles: true
+};
 
 export default async function ({ element }: ILoadSvg) {
     const dataset = element.dataset as IDataset;
@@ -17,13 +21,19 @@ export default async function ({ element }: ILoadSvg) {
         url,
         selector: Selector.svg
     });
+    const svgLoadedEvent = new CustomEvent(
+        EventName.svgLoaded,
+        eventParams
+    );
+
 
     if (svg) {
         svg.slot = name;
 
         element.appendChild(svg);
 
-        element.dataset.loaded = nothing;
-    }
+        element.dataset.svgLoaded = nothing;
 
+        element.dispatchEvent(svgLoadedEvent);
+    }
 }
