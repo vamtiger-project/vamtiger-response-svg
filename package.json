@@ -1,6 +1,6 @@
 {
     "name": "vamtiger-responsive-svg",
-    "version": "0.6.0",
+    "version": "0.6.1",
     "description": "VAMTIGER Responsive SVG",
     "main": "build/vamtiger-responsive-svg.js",
     "scripts": {
