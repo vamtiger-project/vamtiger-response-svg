@@ -1,8 +1,8 @@
 {
     "name": "vamtiger-responsive-svg",
-    "version": "0.3.1",
+    "version": "0.6.0",
     "description": "VAMTIGER Responsive SVG",
-    "main": "build",
+    "main": "build/vamtiger-responsive-svg.js",
     "scripts": {
         "test": "npm run clean && npm run build && npm run bundle-node-test && npm run bundle-browser-test && npm run mocha && npm run bundle-source",
         "mocha": "mocha build/test/node --recursive",
