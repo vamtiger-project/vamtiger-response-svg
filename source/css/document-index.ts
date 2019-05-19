@@ -1,2 +1,2 @@
-export default `vamtiger-responsive-svg [slot=vamtiger-responsive-svg]{width:100%;height:100%}
+export default `vamtiger-responsive-svg figure,vamtiger-responsive-svg svg{margin:0;padding:0;width:100%;height:100%}vamtiger-responsive-svg figure{position:relative}
 /*# sourceMappingURL=document-index.ts.map */`;

@@ -1,1 +1,1 @@
-export default `<slot></slot>`;
+export default `<slot></slot> <figure></figure> <figcaption></figcaption> <span></span> <a></a>`;

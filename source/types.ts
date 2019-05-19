@@ -1,14 +1,21 @@
 import * as VamtigerBrowserMethodTypes from 'vamtiger-browser-method/build/types';
+import { requestIdleCallback } from 'requestidlecallback';
 import VamtigerResponsiveSvg from './element';
 
 export enum StringConstant {
-    nothing = ''
+    nothing = '',
+    slash = '/',
+    imageObject = 'http://schema.org/ImageObject'
 }
 
 export enum Selector {
     style = 'style',
     svg = 'svg',
-    slot = 'slot'
+    slot = 'slot',
+    figure = 'figure',
+    figcaption = 'figcaption',
+    span = 'span',
+    a = 'a'
 }
 
 export enum EventName {
@@ -30,6 +37,8 @@ export interface IAttributes {
     for?: string;
     slot?: string;
     name?: string;
+    itemprop?: string;
+    href?: string;
 }
 
 export interface IProperties {
@@ -46,7 +55,7 @@ export interface IDataset extends DOMStringMap {
 }
 
 export interface IJosnLdImageObject {
-    "@context": string;
+    '@context': string;
     '@type': string;
     name: string;
     description: string;
@@ -75,4 +84,7 @@ export type GetTemplate<P extends IGetTemplate> =
     P['selector'] extends Selector.style ? HTMLStyleElement :
     P['selector'] extends Selector.svg ? SVGElement :
     P['selector'] extends Selector.slot ? HTMLSlotElement :
+    P['selector'] extends Selector.figure | Selector.figcaption ? HTMLElement :
+    P['selector'] extends Selector.span ? HTMLSpanElement :
+    P['selector'] extends Selector.a ? HTMLAnchorElement :
     null;
