@@ -1,6 +1,6 @@
 {
     "name": "vamtiger-responsive-svg",
-    "version": "0.6.1",
+    "version": "0.7.0",
     "description": "VAMTIGER Responsive SVG",
     "main": "build/vamtiger-responsive-svg.js",
     "scripts": {
@@ -25,9 +25,7 @@
         "watch-html": "npm run bundle-html -- --watch",
         "watch-css": "npm run bundle-css -- --watch",
         "watch": "vamtiger-watch --folder source --extension ts --script test --extension html --script bundle-html --extension css --script bundle-css",
-        "serve": "npm run test && cd build && python -m SimpleHTTPServer",
-        "install-source": "npm i --save-dev vamtiger-browser-method@source",
-        "postinstall": "vamtiger-postinstall --distTag source && npm run install-source"
+        "serve": "npm run test && cd build && python -m SimpleHTTPServer"
     },
     "keywords": [
         "vamtiger",
@@ -49,7 +47,7 @@
         "mocha": "^6.0.2",
         "typescript": "^3.3.3333",
         "vamtiger-bash": "0.0.25",
-        "vamtiger-browser-method": "^0.49.0",
+        "vamtiger-browser-method": "^0.81.1",
         "vamtiger-bundle-css-next": "^0.4.1",
         "vamtiger-bundle-html": "^0.2.1",
         "vamtiger-bundle-typescript": "0.0.27",
