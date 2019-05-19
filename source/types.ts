@@ -1,3 +1,4 @@
+import * as VamtigerBrowserMethodTypes from 'vamtiger-browser-method/build/types';
 import VamtigerResponsiveSvg from './element';
 
 export enum StringConstant {
@@ -40,7 +41,30 @@ export interface ILoadSvg {
 }
 
 export interface IDataset extends DOMStringMap {
-    svg: string;
+    svg?: string;
+    jsonLd?: string;
+}
+
+export interface IJosnLdImageObject {
+    "@context": string;
+    '@type': string;
+    name: string;
+    description: string;
+    author: {
+        '@type': string;
+        givenName: string;
+        familyName: string;
+        email: string;
+    };
+    datePublished: string;
+    contentUrl: string;
+}
+
+export interface IData {
+    jsonLd: IJosnLdImageObject[],
+    json: {
+        template: string
+    }
 }
 
 export type AttributesKey = keyof IAttributes;

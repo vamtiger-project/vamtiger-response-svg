@@ -1,4 +1,3 @@
-import loadScript from '../node_modules/vamtiger-browser-method/source/load-script';
 import {
     Selector,
     ObservedAttribute
@@ -11,6 +10,8 @@ import css from './css/document-index';
 import getTemplate from './get-template';
 import loadSvg from './load-svg';
 
+const { VamtigerBrowserMethod } = window;
+const { loadScript } = VamtigerBrowserMethod;
 export const name = 'vamtiger-responsive-svg';
 
 css && loadScript({ name, css })
