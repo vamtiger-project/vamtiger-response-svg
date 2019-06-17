@@ -11,17 +11,19 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const chai_1 = require("chai");
 const { VamtigerBrowserMethod } = window;
 const { loadScript } = VamtigerBrowserMethod;
+const url = 'vamtiger-responsive-svg.js.json.js';
+const selector = `script[src="${url}"], script[data-name="${url}"]`;
 exports.default = () => describe('vamtiger-responsive-svg', function () {
     before(function () {
         return __awaiter(this, void 0, void 0, function* () {
             yield loadScript({
-                src: 'vamtiger-responsive-svg.js'
+                src: url
             });
         });
     });
     it('load script', function () {
         return __awaiter(this, void 0, void 0, function* () {
-            const script = document.head.querySelector('[src="vamtiger-responsive-svg.js"]');
+            const script = document.head.querySelector(selector);
             chai_1.expect(script instanceof HTMLScriptElement).to.be.true;
         });
     });
