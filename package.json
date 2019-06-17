@@ -53,6 +53,7 @@
         "vamtiger-bundle-html": "^0.2.1",
         "vamtiger-bundle-typescript": "0.0.27",
         "vamtiger-copy-file": "0.0.9",
+        "vamtiger-export-to-browser-json": "0.0.5",
         "vamtiger-get-directory-content": "0.0.35",
         "vamtiger-node-typescript-commit": "^0.9.1",
         "vamtiger-postinstall": "^0.16.1",
