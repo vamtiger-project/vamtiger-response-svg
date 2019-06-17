@@ -11,7 +11,7 @@
         "clean-bundle": "vamtiger-remove -d build -p \"(vamtiger-responsive-svg).(js(.map)?|d.ts)\"",
         "clean": "rm -rf build/*",
         "clean-install": "rm -rf package-lock.json node_modules && npm i",
-        "bundle-source": "vamtiger-bundle-typescript --relativePath --entryFilePath source/vamtiger-responsive-svg.ts --bundleFilePath build/vamtiger-responsive-svg.js --format iife --sourcemap true --copySourceMap --minify",
+        "bundle-source": "vamtiger-bundle-typescript --relativePath --entryFilePath source/vamtiger-responsive-svg.ts --bundleFilePath build/vamtiger-responsive-svg.js --format iife --sourcemap true --copySourceMap --minify && vamtiger-export-to-browser-json --file build/vamtiger-responsive-svg.js",
         "bundle-node-test": "vamtiger-bundle-typescript --relativePath --entryFilePath source/test/node.ts --bundleFilePath build/test/node.js --format cjs --sourcemap true --copySourceMap --minify",
         "bundle-browser-test": "vamtiger-bundle-typescript --relativePath --entryFilePath source/test/browser.ts --bundleFilePath build/test/browser.js --format iife --sourcemap true --copySourceMap --minify",
         "bundle": "npm test && npm run bundle-source && npm run clean-bundle",
@@ -25,7 +25,8 @@
         "watch-html": "npm run bundle-html -- --watch",
         "watch-css": "npm run bundle-css -- --watch",
         "watch": "vamtiger-watch --folder source --extension ts --script test --extension html --script bundle-html --extension css --script bundle-css",
-        "serve": "npm run test && cd build && python -m SimpleHTTPServer"
+        "serve": "npm run test && cd build && python -m SimpleHTTPServer 8886",
+        "publish-preview": "git add -A; git commit -m test -a; git push -u origin gh-pages"
     },
     "keywords": [
         "vamtiger",
